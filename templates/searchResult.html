@@ -1,1 +1,70 @@
-<h1>{{search}}</h1>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Search Result</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{{url_for('static', filename='dist/css/bootstrap.css')}}" >
+    <meta name="theme-color" content="#712cf9">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand">画像検査 By Pixabay</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <form class="navbar-form navbar-right" method = "POST" action = "/search">
+              <div class="form-group">
+                <input type="text" name = "search" maxlength="25" id = "search" class="form-control" placeholder="Search for...">
+              </div>
+              <button class="btn btn-default" type="submit">Go!</button>
+            </form>
+          </div><!--/.navbar-collapse -->
+        </div>
+      </nav>
+  
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron align-jumbotron-center">
+        <div class="container text-center">
+          <h1>This is Search By</h1>
+          <p>{{search}}</p>
+        </div>
+      </div>
+  
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            {% for graph in graph_list %}
+                {% if graph %}
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="...">
+                        <div class="caption">
+                          <h5>{{graph.categories}}</h5>
+                          <p>...</p>
+                          <p>
+                            <a class="btn btn-primary" role="button">Download<span class="badge">{{graph.download_count}}</span></a> 
+                            <a class="btn btn-default" role="button">Like<span class="badge">{{graph.favorites}}</span></a>
+                          </p>
+                        </div>
+                    </div>
+                  </div>
+                {% endif %}
+            {% endfor %}
+
+        </div>
+        <hr>
+      </div> <!-- /container -->
+    
+<script src="{{url_for('static', filename='dist/jquery-3.6.0.min.js')}}"></script>
+<script src="{{url_for('static', filename='dist/js/bootstrap.js')}}"></script>
+<script src="{{url_for('static', filename='dist/js/bootstrap-select.js')}}"></script>
+
+</body>
+</html>
