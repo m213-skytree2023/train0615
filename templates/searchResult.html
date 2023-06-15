@@ -32,7 +32,7 @@
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron align-jumbotron-center">
         <div class="container text-center">
-          <h1>This is Search By</h1>
+          <h3>This is Search By</h3>
           <p>{{search}}</p>
         </div>
       </div>
@@ -47,7 +47,7 @@
                         <img src={{graph.pic_url}}>
                         <div class="caption">
                           <h5>{{graph.categories}}</h5>
-                          <p>...</p>
+                          <p>--------------------------</p>
                           <p>
                             <a class="btn btn-primary" role="button">Download<span class="badge">{{graph.download_count}}</span></a> 
                             <a class="btn btn-default" role="button">Like<span class="badge">{{graph.favorites}}</span></a>
@@ -59,7 +59,6 @@
             {% endfor %}
 
         </div>
-        <hr>
       </div> <!-- /container -->
     
 <script src="{{url_for('static', filename='dist/jquery-3.6.0.min.js')}}"></script>
