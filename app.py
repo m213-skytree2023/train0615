@@ -13,7 +13,7 @@ def graph_search():
     if request.method == 'POST':
         search = request.form.get("search")
         #graph_list=
-    return render_template('index.html',graph_list=)
+    return render_template('index.html')
 
 
 
