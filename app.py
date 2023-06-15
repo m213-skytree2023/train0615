@@ -12,9 +12,10 @@ def toppage():
 def graph_search():
     if request.method == 'POST':
         search = request.form.get("search")
-        # To do:
-        #     用search这个变量作为关键词，查询图片数据
-        return render_template("searchResult.html",search = search)
+        #graph_list=
+    return render_template('index.html',graph_list=)
+
+
 
 
 if __name__ == "__main__":
